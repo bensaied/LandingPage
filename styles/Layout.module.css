@@ -1,0 +1,51 @@
+/* Header */
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* Image */
+.headerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Text  */
+.textOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url("/images/1.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+.textOverlay h1 {
+  font-size: 2.5rem;
+  margin: 10px 5;
+}
+
+.textOverlay p {
+  font-size: 1.5rem;
+  margin: 5px;
+}
+
+/* Responsive styles */
+@media (max-height: 768px) {
+  .textOverlay {
+    top: 40%;
+    transform: translateY(-40%);
+  }
+}
