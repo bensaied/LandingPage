@@ -1,0 +1,99 @@
+/* Section */
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Column */
+.column {
+  width: calc(40% - 10px);
+  margin: 5px;
+}
+
+/* Image */
+.image {
+  width: 70%;
+  margin-left: 150px;
+}
+
+/* Text  */
+.textOverlay {
+  margin-right: 160px;
+  font-family: "Arial", sans-serif;
+}
+.textOverlay h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+.textOverlay h3 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
+.textOverlay p {
+  margin-bottom: 20px;
+  font-size: 0.8em;
+}
+
+/* Button */
+.button {
+  background-color: #b9658b;
+  color: white;
+  border: 2px solid #c71585;
+  border-radius: 0px;
+  padding: 14px 26px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.button span {
+  color: black;
+}
+.button p1 {
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.button:hover {
+  background-color: #ecd4df;
+  color: black;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .column {
+    width: 100%;
+    margin: 0;
+  }
+
+  .image {
+    width: 50%;
+    margin-left: 80px;
+  }
+
+  .textOverlay {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+}
