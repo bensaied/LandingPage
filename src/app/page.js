@@ -7,6 +7,75 @@ import Section4 from "../components/Section4";
 import { useEffect } from "react";
 
 const LandingPage = ({ children }) => {
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const sectionOffsets = Array.from(sections).map((section) => ({
+      id: section.id,
+      offset: section.offsetTop,
+    }));
+
+    // Function to perform binary search to find the nearest section index
+    const binarySearchNearestSection = (targetOffset) => {
+      let left = 0;
+      let right = sectionOffsets.length - 1;
+      let nearestIndex = 0;
+      let minDistance = Number.MAX_SAFE_INTEGER;
+
+      while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        const currentOffset = sectionOffsets[mid].offset;
+        const distance = Math.abs(targetOffset - currentOffset);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearestIndex = mid;
+        }
+
+        if (currentOffset === targetOffset) {
+          return mid; // Found exact match
+        } else if (currentOffset < targetOffset) {
+          left = mid + 1; // Search in the right half
+        } else {
+          right = mid - 1; // Search in the left half
+        }
+      }
+
+      return nearestIndex;
+    };
+
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const nearestSectionIndex = binarySearchNearestSection(scrollTop);
+
+      // Scroll to the nearest section with a slower animation
+      window.scrollTo({
+        top: sectionOffsets[nearestSectionIndex].offset,
+        behavior: "smooth",
+      });
+    };
+
+    const throttledScroll = throttle(handleScroll, 500); // Throttle the scroll event
+
+    window.addEventListener("scroll", throttledScroll);
+
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+    };
+  }, []);
+
+  // Throttle function to limit the rate at which the scroll event is fired
+  function throttle(callback, delay) {
+    let previousCall = new Date().getTime();
+    return function () {
+      const time = new Date().getTime();
+      if (time - previousCall >= delay) {
+        previousCall = time;
+        callback.apply(null, arguments);
+      }
+    };
+  }
+
   return (
     <>
       <Head>

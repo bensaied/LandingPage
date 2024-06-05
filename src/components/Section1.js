@@ -3,7 +3,7 @@ import styles from "../../styles/Section1.module.css";
 
 const Section1 = () => {
   return (
-    <section id="section1" className={styles.header}>
+    <section id="section1" className={styles.section}>
       <div className={styles.textOverlay}>
         <h1>Lorem ipsum dolor sit amet, consec</h1>
         <p>
