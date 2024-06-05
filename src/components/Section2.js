@@ -1,16 +1,44 @@
 import React from "react";
-import styles from "../../styles/Section1.module.css";
+import styles from "../../styles/Section2.module.css";
 
 const Section2 = () => {
   return (
     <section id="section2" className={styles.section}>
+      {" "}
+      {/* Use the new CSS class */}
       <div className={styles.textOverlay}>
-        <h1>Lorem ipsum dolor sit amet, consec</h1>
+        <img
+          src="/images/diamant.png"
+          alt="diamant"
+          className={styles.overlayImage}
+        />
+        <h1>Aenean vulputate quis est pulvinar.</h1>
         <p>
-          Aliquam eu malesuada turpis, eu interdum nibh. Etiam tristique erat in
-          ligula consequat malesuada.
+          Maeceans dapibus turpis id purus mollis aliquam. Sed ficilisis nec
+          ipsum nec
         </p>
-        <p>Praesent posuere vestibulum neque ac posuere.</p>
+        <p>
+          rutrum.Maeceans dapibus turpis id purus mollis aliquam. Sed ficilisis
+          nec ipsum nec
+        </p>
+        <p>
+          rutrum.Maeceans dapibus turpis id purus mollis aliquam. Sed ficilisis
+          nec ipsum nec
+        </p>
+        <button className={styles.button}>
+          <strong>About us</strong>
+        </button>
+        <div className={styles.videoContainer}>
+          <iframe
+            width="670"
+            height="355"
+            src="https://www.youtube.com/embed/LXb3EKWsInQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </section>
   );

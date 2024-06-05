@@ -1,0 +1,67 @@
+/* Section */
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  overflow: hidden;
+}
+/* Text */
+.textOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+}
+.textOverlay h1,
+.textOverlay p {
+  margin: 10px 0;
+}
+
+/* Image */
+/* Sizes of the Image Icon ( for Tablet and Mobile )*/
+.overlayImage {
+  max-width: 15%;
+  height: auto;
+  margin-top: 20px;
+}
+/* Initial sizes of the Image Icon ( for browser )*/
+@media (min-width: 768px) {
+  .overlayImage {
+    max-width: 4%;
+  }
+}
+
+/* Button */
+.button {
+  background-color: white;
+  border: 2px solid #c71585;
+  border-radius: 0px;
+  padding: 16px 28px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.button span {
+  color: black;
+}
+.button:hover {
+  background-color: #b9658b;
+  color: white;
+}
+
+/* Video */
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
