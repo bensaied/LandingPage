@@ -49,3 +49,11 @@
     transform: translateY(-40%);
   }
 }
+
+.layout {
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.section {
+  height: 100vh; /* Set height to viewport height */
+}
