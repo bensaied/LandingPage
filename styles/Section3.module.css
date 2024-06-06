@@ -43,19 +43,6 @@
   flex-wrap: wrap;
   /justify-content: center;
 }
-
-/* Media query for smaller screens, such as mobile */
-@media screen and (max-width: 600px) {
-  .part {
-    width: 100%;
-  }
-}
-/* .part {
-  width: 25%;
-  box-sizing: border-box;
-  padding: 20px;
-  text-align: center;
-} */
 .part {
   position: relative;
   width: 25%;
@@ -64,6 +51,7 @@
   text-align: center;
   margin-top: 460px;
 }
+
 /* Hover on parts */
 .part:hover {
   background-color: rgba(0, 0, 0, 0.2);

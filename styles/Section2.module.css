@@ -62,8 +62,42 @@
 
 /* Video */
 .videoContainer {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 120px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .overlayImage {
+    max-width: 4%;
+  }
+}
+@media (max-width: 767px) {
+  .textOverlay {
+    padding: 20px 10px;
+  }
+  .button {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .textOverlay {
+    padding: 15px 5px;
+  }
+  .overlayImage {
+    max-width: 20%;
+  }
+  .button {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .videoContainer {
+    overflow: hidden;
+    max-width: 90%;
+  }
 }
