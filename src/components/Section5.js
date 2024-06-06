@@ -34,7 +34,7 @@ const Section5 = React.forwardRef((props, ref) => {
     <section ref={ref} id="section5" className={styles.section}>
       <div className={styles.formBox}>
         <h3>Any questions?</h3>
-        <h2>Let's talk today!</h2>
+        <h2>Let&apos;s talk today!</h2>
         <form onSubmit={handleSubmit}>
           <input
             required
