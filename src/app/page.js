@@ -1,82 +1,82 @@
 "use client";
 import Head from "next/head";
+import React, { useState, useEffect, useRef } from "react";
+import { debounce } from "lodash";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
 import Section3 from "../components/Section3";
 import Section4 from "../components/Section4";
 import Section5 from "../components/Section5";
 
-import { useEffect } from "react";
-
 const LandingPage = ({ children }) => {
+  // Smooth Scrolling between sections
+  const [activeSection, setActiveSection] = useState("section1");
+  const sectionRefs = {
+    section1: useRef(null),
+    section2: useRef(null),
+    section3: useRef(null),
+    section4: useRef(null),
+    section5: useRef(null),
+    section6: useRef(null),
+  };
+
+  const scrollThere = (targetElement) => {
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  };
+
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const sectionOffsets = Array.from(sections).map((section) => ({
-      id: section.id,
-      offset: section.offsetTop,
-    }));
+    const handleScroll = debounce(() => {
+      let closestSection = null;
+      let closestDistance = Infinity;
 
-    // Function to perform binary search to find the nearest section index
-    const binarySearchNearestSection = (targetOffset) => {
-      let left = 0;
-      let right = sectionOffsets.length - 1;
-      let nearestIndex = 0;
-      let minDistance = Number.MAX_SAFE_INTEGER;
-
-      while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        const currentOffset = sectionOffsets[mid].offset;
-        const distance = Math.abs(targetOffset - currentOffset);
-
-        if (distance < minDistance) {
-          minDistance = distance;
-          nearestIndex = mid;
-        }
-
-        if (currentOffset === targetOffset) {
-          return mid; // Found exact match
-        } else if (currentOffset < targetOffset) {
-          left = mid + 1; // Search in the right half
-        } else {
-          right = mid - 1; // Search in the left half
+      for (const section in sectionRefs) {
+        const ref = sectionRefs[section].current;
+        if (ref) {
+          const { top } = ref.getBoundingClientRect();
+          const distance = Math.abs(top);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = section;
+          }
         }
       }
 
-      return nearestIndex;
-    };
+      setActiveSection(closestSection);
+    }, 100);
 
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      const nearestSectionIndex = binarySearchNearestSection(scrollTop);
-
-      // Scroll to the nearest section with a slower animation
-      window.scrollTo({
-        top: sectionOffsets[nearestSectionIndex].offset,
-        behavior: "smooth",
-      });
-    };
-
-    const throttledScroll = throttle(handleScroll, 500); // Throttle the scroll event
-
-    window.addEventListener("scroll", throttledScroll);
-
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", throttledScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Throttle function to limit the rate at which the scroll event is fired
-  function throttle(callback, delay) {
-    let previousCall = new Date().getTime();
-    return function () {
-      const time = new Date().getTime();
-      if (time - previousCall >= delay) {
-        previousCall = time;
-        callback.apply(null, arguments);
+  useEffect(() => {
+    const handleWheel = (e) => {
+      e.preventDefault();
+      const sectionKeys = Object.keys(sectionRefs);
+      const currentIndex = sectionKeys.indexOf(activeSection);
+      let targetElement;
+
+      if (e.deltaY > 0) {
+        if (currentIndex < sectionKeys.length - 1) {
+          targetElement = sectionRefs[sectionKeys[currentIndex + 1]].current;
+        }
+      } else if (e.deltaY < 0) {
+        if (currentIndex > 0) {
+          targetElement = sectionRefs[sectionKeys[currentIndex - 1]].current;
+        }
+      }
+
+      if (targetElement) {
+        scrollThere(targetElement);
       }
     };
-  }
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [activeSection]);
 
   return (
     <>
@@ -87,13 +87,12 @@ const LandingPage = ({ children }) => {
       </Head>
 
       <main>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
+        <Section1 ref={sectionRefs.section1} />
+        <Section2 ref={sectionRefs.section2} />
+        <Section3 ref={sectionRefs.section3} />
+        <Section4 ref={sectionRefs.section4} />
+        <Section5 ref={sectionRefs.section5} />
       </main>
-      <footer>{/* Add footer content */}</footer>
     </>
   );
 };

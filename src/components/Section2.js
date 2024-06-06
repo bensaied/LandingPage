@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "../../styles/Section2.module.css";
 
-const Section2 = () => {
+const Section2 = React.forwardRef((props, ref) => {
   return (
-    <section id="section2" className={styles.section}>
+    <section ref={ref} id="section2" className={styles.section}>
       {" "}
       {/* Use the new CSS class */}
       <div className={styles.textOverlay}>
@@ -42,6 +42,6 @@ const Section2 = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Section2;

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "../../styles/Section4.module.css";
 
-const Section4 = () => {
+const Section4 = React.forwardRef((props, ref) => {
   return (
-    <section id="section4" className={styles.section}>
+    <section ref={ref} id="section4" className={styles.section}>
       <div className={styles.container}>
         {/* Left column with image */}
         <div className={styles.column}>
@@ -38,6 +38,6 @@ const Section4 = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Section4;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/Section5.module.css";
 
-const Section5 = () => {
+const Section5 = React.forwardRef((props, ref) => {
   // Define States for the Form Fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,7 +31,7 @@ const Section5 = () => {
   };
 
   return (
-    <section id="section5" className={styles.section}>
+    <section ref={ref} id="section5" className={styles.section}>
       <div className={styles.formBox}>
         <h3>Any questions?</h3>
         <h2>Let's talk today!</h2>
@@ -70,6 +70,6 @@ const Section5 = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Section5;

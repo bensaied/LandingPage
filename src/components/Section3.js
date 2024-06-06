@@ -2,9 +2,9 @@
 import React from "react";
 import styles from "../../styles/Section3.module.css";
 
-const Section3 = () => {
+const Section3 = React.forwardRef((props, ref) => {
   return (
-    <section id="section3" className={styles.section}>
+    <section ref={ref} id="section3" className={styles.section}>
       <img
         src="/images/3.png"
         alt="Background"
@@ -63,6 +63,6 @@ const Section3 = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Section3;
