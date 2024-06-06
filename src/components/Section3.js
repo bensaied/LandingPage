@@ -64,5 +64,5 @@ const Section3 = React.forwardRef((props, ref) => {
     </section>
   );
 });
-
+Section3.displayName = "Section3";
 export default Section3;
