@@ -4,6 +4,13 @@ This is my submission for the Lead Developer Challenge. It includes a landing pa
 
 The landing page features a contact form that submits data to the WordPress site via a custom REST API endpoint.
 
+## Demo
+
+https://landing-page-git-master-oussama-ben-saieds-projects.vercel.app/
+
+🚩 Note: You must download and activate the plugin in your WordPress installation in order to use the form.
+For instructions on downloading and activating the plugin, please refer to the [README](https://github.com/bensaied/LandingPage/tree/master/server/oussama_ben_saied) of the plugin.
+
 ## Screenshots
 
 ![1](https://github.com/bensaied/LandingPage/assets/157906188/7a4b4c2d-b20e-41a1-adf0-8f9d1b08880e)
@@ -15,9 +22,6 @@ The landing page features a contact form that submits data to the WordPress site
 ![errorSubmit](https://github.com/bensaied/LandingPage/assets/157906188/8331f27d-bb40-4326-ad25-38949fc6b0a5)
 ![MyactivatedPlugin](https://github.com/bensaied/LandingPage/assets/157906188/8ad57549-9c4e-4542-b687-727e082e23ca)
 ![wp-form](https://github.com/bensaied/LandingPage/assets/157906188/fcc5b1af-5381-4fd3-87d3-8e938fe61802)
-
-
-## Demo
 
 ## 🧰 Tech Stack
 
