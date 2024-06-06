@@ -6,8 +6,16 @@ The landing page features a contact form that submits data to the WordPress site
 
 ## Screenshots
 
-![App Screenshot]()
-![App Screenshot]()
+![1](https://github.com/bensaied/LandingPage/assets/157906188/7a4b4c2d-b20e-41a1-adf0-8f9d1b08880e)
+![2](https://github.com/bensaied/LandingPage/assets/157906188/73b50ed0-e377-4ed1-be52-f7abb4d8e579)
+![3](https://github.com/bensaied/LandingPage/assets/157906188/043c50fc-d5b8-4d75-82a6-7f5d406b851f)
+![4](https://github.com/bensaied/LandingPage/assets/157906188/c18137e8-c60c-421e-8ab6-7487b6b79441)
+![5](https://github.com/bensaied/LandingPage/assets/157906188/cb55d497-6719-4dc1-804a-66c1e8281b25)
+![successSubmit](https://github.com/bensaied/LandingPage/assets/157906188/defdb602-4593-4637-84a3-79b2f44dc6a8)
+![errorSubmit](https://github.com/bensaied/LandingPage/assets/157906188/8331f27d-bb40-4326-ad25-38949fc6b0a5)
+![MyactivatedPlugin](https://github.com/bensaied/LandingPage/assets/157906188/8ad57549-9c4e-4542-b687-727e082e23ca)
+![wp-form](https://github.com/bensaied/LandingPage/assets/157906188/fcc5b1af-5381-4fd3-87d3-8e938fe61802)
+
 
 ## Demo
 
