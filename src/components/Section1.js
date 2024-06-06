@@ -10,7 +10,7 @@ const Section1 = () => {
           Aliquam eu malesuada turpis, eu interdum nibh. Etiam tristique erat in
           ligula consequat malesuada.
         </p>
-        <p>Praesent posuere vestibulum neque ac posuere.</p>
+        <p1>Praesent posuere vestibulum neque ac posuere.</p1>
       </div>
     </section>
   );

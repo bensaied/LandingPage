@@ -47,14 +47,30 @@
   text-align: center;
   font-family: "Arial", sans-serif;
 }
+.textOverlay::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: -1;
+}
+
 .textOverlay h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin: 10px 5;
 }
 
 .textOverlay p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 5px;
+}
+.textOverlay p1 {
+  font-size: 1.2rem;
+  margin: 5px;
+  margin-bottom: 80px;
 }
 
 /* Responsive styles */
