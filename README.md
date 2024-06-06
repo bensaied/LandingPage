@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Webicient LandingPage
 
-## Getting Started
+This is my submission for the Lead Developer Challenge. It includes a landing page developed using Next.js and a WordPress API-based plugin.
 
-First, run the development server:
+The landing page features a contact form that submits data to the WordPress site via a custom REST API endpoint.
+
+## Screenshots
+
+![App Screenshot]()
+![App Screenshot]()
+
+## Demo
+
+## 🧰 Tech Stack
+
+Next.js, WordPress, PHP, HTML/CSS/JavaScript.
+
+## 🔥 Features
+
+- Responsive landing page built with Next.js.
+- Custom WordPress plugin with a REST API endpoint for form submissions.
+- Contact form submission integration between landing page and WordPress site.
+
+## 🚀 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  # Clone the repository
+     git clone https://github.com/bensaied/LandingPage
+
+  # Navigate to the app folder
+     cd LandingPage/
+
+   # Install dependencies
+    npm Install
+
+  # Start the development server
+    npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Acknowledgements
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Special thanks to the Webicient recruitment team for providing this challenge opportunity.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 💝 Support
 
-## Learn More
+For support, email ben.saied@proton.me and don't forget to leave a star ⭐️.
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Authors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Github: [@bensaied](https://www.github.com/bensaied)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🔗 Links
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/oussama-ben-saayeed/)
